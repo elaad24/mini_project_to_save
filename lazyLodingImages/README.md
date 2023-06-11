@@ -1,0 +1,1 @@
+## this is a templat for fast development project 

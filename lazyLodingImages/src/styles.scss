@@ -1,0 +1,57 @@
+.container {
+  width: 80vw;
+  flex-wrap: wrap;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  object-fit: cover;
+  object-position: center;
+}
+
+img {
+  width: 100%;
+  aspect-ratio: 1/1;
+  display: block;
+}
+
+.blur_load::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  animation: pulse 2.5s infinite;
+
+}
+
+.blur_load.loaded::before{
+content: none;
+}
+
+@keyframes pulse {
+  0% {
+    background-color: rgba(255, 255, 255, 0);
+  }
+  50% {
+    background-color: rgba(255, 255, 255, 0.17);
+  }
+  100% {
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+
+.blur_load {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+}
+.blur_load.loaded > img {
+  opacity: 1;
+}
+.blur_load > img {
+  opacity: 0;
+  transition: opacity 200ms ease-in-out;
+}

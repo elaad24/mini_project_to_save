@@ -1,0 +1,14 @@
+@mixin flexCenter ($direction){
+    display: flex;
+    flex-direction: $direction ;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+@mixin dRowSpaceBetween{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
